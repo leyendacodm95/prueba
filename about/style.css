@@ -1,0 +1,183 @@
+/* Reseteo básico y fuentes */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 1. Estilos de la Barra de Navegación */
+.navbar {
+    background-color: #000000;
+    color: white;
+    padding: 1rem 0;
+    border-bottom: 2px solid #e03131; /* Un color de acento rojo */
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Mantenemos el display flex por defecto */
+}
+
+.navbar nav li {
+    margin-left: 1.5rem;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar nav a:hover {
+    color: #e03131;
+}
+
+/* 2. Estilos del Contenido Principal (Sección Hero) */
+.MainVideo {
+    background-color: #1e1e1e; /* Color oscuro similar al IDE */
+    color: rgb(255, 255, 255);
+    padding: 4rem 0;
+    text-align: center;
+    background-image: none; 
+}
+
+.MainVideo h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    /* CORRECCIÓN: Cambiado a blanco para ser visible en fondo oscuro */
+    color: #ffffff; 
+}
+
+.MainVideo video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-width: 800px; 
+    margin: 2rem auto 0; 
+    display: block;
+    border: 1px solid #333;
+}
+
+.content-section {
+    padding: 2rem 0;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.video-gallery {
+    display: flex;
+    justify-content: center; /* Cambiado de space-around a center */
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    gap: 2rem; /* Aumenté el espacio entre los módulos */
+}
+
+/* Estilo para los videos/módulos dentro de la galería */
+.video-gallery > div {
+    /* Estilo para el contenedor del módulo */
+    flex-grow: 1; /* Permite que crezca */
+    flex-basis: 300px; /* Tamaño base antes de wrapping */
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    background-color: white;
+    text-align: left;
+}
+
+.video-gallery video {
+    width: 100%; /* El video ocupa todo su módulo */
+    aspect-ratio: 16 / 9;
+    margin-bottom: 1rem;
+}
+
+
+/* 3. Estilos del Pie de Página */
+.footer {
+    background-color: #333; /* Oscuro */
+    color: #aaa;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.footer .social-links a {
+    color: #aaa;
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
+
+.footer .social-links a:hover {
+    color: white;
+}
+
+
+/* --- MEDIA QUERIES PARA RESPONSIVIDAD (Asegura que se ve bien en móviles) --- */
+
+/* Pantallas Medianas y Pequeñas (ej: tabletas en vertical y móviles) */
+@media (max-width: 768px) {
+    
+    /* Adaptación de la barra de navegación */
+    .navbar .container {
+        flex-direction: column; /* Apila el logo y el menú */
+        align-items: flex-start;
+    }
+
+    .navbar nav {
+        margin-top: 1rem;
+        width: 100%; 
+    }
+    
+    .navbar nav ul {
+        flex-direction: column; /* Apila los enlaces verticalmente */
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar nav li {
+        margin: 0.5rem 0; /* Espacio vertical entre los enlaces */
+        width: 100%; 
+        text-align: center; 
+    }
+    
+    /* Adaptación de la galería de videos/módulos */
+    .video-gallery {
+        gap: 1.5rem; /* Reduce un poco el gap */
+    }
+
+    .video-gallery > div {
+        flex-basis: 90%; /* Hace que los módulos ocupen casi todo el ancho */
+    }
+}
+
+/* Pantallas Extra Pequeñas (ej: móviles) */
+@media (max-width: 530px) {
+    .MainVideo {
+        padding: 2rem 1rem; /* Padding reducido */
+    }
+
+    .MainVideo h1 {
+        font-size: 2rem;
+    }
+}

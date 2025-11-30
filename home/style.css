@@ -1,0 +1,173 @@
+/* Reseteo básico y fuentes */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 1. Estilos de la Barra de Navegación */
+.navbar {
+    background-color: #000000;
+    color: white;
+    padding: 1rem 0;
+    border-bottom: 2px solid #e03131;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar nav li {
+    margin-left: 1.5rem;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar nav a:hover {
+    color: #e03131;
+}
+
+/* 2. Estilos del Contenido Principal */
+.MainVideo {
+    background-color: #333;
+    color: rgb(255, 255, 255);
+    padding: 4rem 0;
+    text-align: center;
+    /* CORREGIDO: ../ para salir de la carpeta home y entrar a resources */
+    background-image: url("../resources/t1l.png");
+    background-position: center;
+    background-size: cover; /* Recomendado para que la imagen cubra el fondo */
+    text-decoration: wavy;
+}
+
+.MainVideo video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-width: 800px;
+    margin: 0 auto;
+    display: block;
+}
+
+.campeon {
+    color: #ffffff;
+    display: inline-block;
+    margin: 0 0.5rem;
+    animation: bounce;
+    animation-duration: 2s;
+}
+
+.content-section {
+    padding: 2rem 0;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.video-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.video-gallery video {
+    width: 45%;
+    max-width: 350px;
+    aspect-ratio: 16 / 9;
+    min-width: 280px;
+}
+
+.animacion {
+    color: #ffffff;
+    opacity: 0; 
+    transition: opacity 0.5s; 
+}
+
+/* 3. Estilos del Pie de Página */
+.footer {
+    background-color: #222;
+    color: #aaa;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 2rem;
+    text-decoration: #ff0000;
+}
+
+.footer .social-links a {
+    color: #3f3f3f;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    text-align: right;
+    align-items: baseline;
+}
+
+.footer .social-links a:hover {
+    color: white;
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar nav {
+        margin-top: 1rem;
+        width: 100%;
+    }
+    
+    .navbar nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar nav li {
+        margin: 0.5rem 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .video-gallery {
+        justify-content: center;
+    }
+    
+    .video-gallery video {
+        width: 80%;
+    }
+}
+
+@media (max-width: 530px) {
+    .MainVideo {
+        padding: 2rem 0;
+    }
+}
